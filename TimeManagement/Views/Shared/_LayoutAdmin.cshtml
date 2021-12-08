@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <partial name="./AdminPage/_HeaderPartial" />
+    <title>@ViewBag.Title</title>
+</head>
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <partial name="./AdminPage/_SidebarPartial" />
+        @RenderBody()
+    </div>
+
+    <!-- End of Page Wrapper -->
+    <partial name="./AdminPage/_FooterPartial" />
+</body>
+</html>

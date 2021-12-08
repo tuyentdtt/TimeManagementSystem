@@ -77,7 +77,14 @@ namespace TimeManagement
 
             app.UseEndpoints(endpoints =>
             {
-
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapAreaControllerRoute(
+                      name: "Admin",
+                      areaName: "admin",
+                      pattern: "admin/{controller=Home}/{action=Index}/{id?}"
+                    );
+                });
 
                 endpoints.MapControllerRoute(
                     name: "default",
