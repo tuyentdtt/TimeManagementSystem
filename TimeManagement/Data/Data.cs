@@ -12,14 +12,45 @@ namespace TimeManagement.Data
     {
         public static void Seed(this ModelBuilder builder)
         {
+            var hasher = new PasswordHasher<AppUser>();
 
             builder.Entity<AppUser>().HasData(
                new AppUser()
                {
                    Id = Guid.NewGuid().ToString(),
-                   FirstName = "Tuyen"
+                   Email = "Tuyen1@gmail.com",
+                   PasswordHash = hasher.HashPassword(null, "123456Aa@"),
+                   EmailConfirmed = true
+               },
+               new AppUser()
+               {
+                   Id = Guid.NewGuid().ToString(),
+                   Email = "admin@gmail.com",
+                   PasswordHash = hasher.HashPassword(null, "123456Aa@"),
+                   EmailConfirmed = true
+               },
+               new AppUser()
+               {
+                   Id = Guid.NewGuid().ToString(),
+                   Email = "staf@gmail.com",
+                   PasswordHash = hasher.HashPassword(null, "123456Aa@"),
+                   EmailConfirmed = true
                });
 
+
+            builder.Entity<AppRole>().HasData(
+               new AppRole()
+               {
+                   Id = Guid.NewGuid().ToString(),
+                   Name = "Admin",
+                   NormalizedName ="ADMIN"
+               },
+               new AppRole()
+               {
+                   Id = Guid.NewGuid().ToString(),
+                   Name = "Staff",
+                   NormalizedName = "STAFF"
+               });
 
         }    
                 

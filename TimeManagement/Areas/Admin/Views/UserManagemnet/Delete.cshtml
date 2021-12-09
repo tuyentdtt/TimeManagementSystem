@@ -1,0 +1,88 @@
+﻿@model TimeManagement.Entity.AppUser
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@{
+    ViewData["Title"] = "Edit User";
+    Layout = "./_LayoutAdmin";
+}
+
+
+<!-- Main Content -->
+<div id="content">
+
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+
+
+        <p class="mb-4">
+            <h5> <a href="admin/register"> Create Acount</a></h5>
+        </p>
+
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Users List</h6>
+            </div>
+            <div class="card-body">
+                <form asp-action="Delete" method="post">
+                    <table>
+                        <tr>
+                            <th>
+                                Email:
+                            </th>
+                            <td>
+                                <input type="text" name="Id" value="@Model.Id"  />
+                                <input type="text" name="Email" value="@Model.Email" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                First Name:
+                            </th>
+                            <td>
+                                <input type="text" name="FirstName" value="@Model.FirstName" />
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Last Name:
+                            </th>
+                            <td>
+                                <input type="text" name="LastName" value="@Model.LastName" />
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="Delete" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+
+                <div>
+                    <a asp-action="index"> Back To List </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->

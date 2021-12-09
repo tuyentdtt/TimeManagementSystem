@@ -1,9 +1,10 @@
-﻿@model IEnumerable<TimeManagement.Entity.AppUser>
+﻿
+@model IEnumerable<TimeManagement.Entity.AppRole>
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, AuthoringTagHelpers
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "User Role Page";
     Layout = "./_LayoutAdmin";
 }
 
@@ -20,7 +21,7 @@
 
 
         <p class="mb-4">
-            <h5> <a href="admin/register"> Create Acount</a></h5>
+            <h5> <a asp-action="Create"> Create Acount</a></h5>
         </p>
 
 
@@ -35,8 +36,6 @@
                         <thead>
                             <tr>
                                 <th>Email</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
                                 <th></th>
 
                             </tr>
@@ -45,8 +44,6 @@
 
                             <tr>
                                 <th>Email</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
                                 <th></th>
                             </tr>
                         </tfoot>
@@ -55,9 +52,7 @@
                                 foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@item.Email</td>
-                                        <td>@item.FirstName</td>
-                                        <td>@item.LastName</td>
+                                        <td>@item.Name</td>
                                         <td>
                                             <a asp-action="Details" asp-route-id="@item.Id">Detail</a>
                                             |

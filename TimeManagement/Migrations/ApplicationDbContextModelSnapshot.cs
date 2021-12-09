@@ -16,7 +16,7 @@ namespace TimeManagement.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.8")
+                .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -540,6 +540,22 @@ namespace TimeManagement.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("AppRole");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "16d716c2-956e-4e77-bedb-529d50df8274",
+                            ConcurrencyStamp = "6cf6f116-1081-4cf5-804f-a9d432c9b362",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "05c077a4-c369-4fd1-a73d-7e6ff7e199f8",
+                            ConcurrencyStamp = "f673233d-d76d-4a19-8e70-106d58141154",
+                            Name = "Staff",
+                            NormalizedName = "STAFF"
+                        });
                 });
 
             modelBuilder.Entity("TimeManagement.Entity.AppUser", b =>
@@ -565,16 +581,45 @@ namespace TimeManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fb7479ce-35a0-4a30-be73-92128d7f815c",
+                            Id = "25e0ced4-6d5a-48ec-8b04-a5b5dd4fa7c4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "036eed1b-09dc-4538-9cc0-04a518ee7513",
-                            EmailConfirmed = false,
+                            ConcurrencyStamp = "b7ef2880-3e01-4601-835f-b2ec1f9f29f3",
+                            Email = "Tuyen1@gmail.com",
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOLtWA3sTIYv0Mdo3HW7ihzZWXgtbAxQBE35q6k0jSZq061rY4Fz5JoXZB1wxzj6DQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "42d283df-f3a3-4b70-abf6-daaccadb6e68",
+                            SecurityStamp = "9c8bdefa-742c-404a-bd18-038876e7158d",
                             TwoFactorEnabled = false,
-                            DoB = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "Tuyen"
+                            DoB = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = "f1e9842f-353b-4f70-abe3-2a02e797dfca",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "42c7bbd2-0f1b-4a4e-a89f-7944038212bf",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAEJWr+LsV9ofLgpnr4OjUCCOpwKCC7O9uR22HBUJrCbvhL2fCsOc4St+XX+KYnZ3rKA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "c39ffc88-6f87-428d-8b21-925495a30db9",
+                            TwoFactorEnabled = false,
+                            DoB = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = "39f70206-e671-4802-a2a6-dd9445a03017",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "b4e74e16-7015-4927-b933-9cdc7606ded6",
+                            Email = "staf@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAEJpGyraVmDDwfG/D8yiGyzvlC/1i2b5yF3uEWCHHAksFiczE2XsbXPOy5CIA1fHmtQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "46004ac6-40f6-4662-902e-525fd23269db",
+                            TwoFactorEnabled = false,
+                            DoB = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

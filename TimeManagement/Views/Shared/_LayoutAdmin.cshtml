@@ -10,11 +10,21 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+
         <partial name="./AdminPage/_SidebarPartial" />
-        @RenderBody()
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            
+                
+                <partial name="./AdminPage/_TopbarPartial" />
+                @RenderBody()
+
+            
+        </div>
     </div>
 
-    <!-- End of Page Wrapper -->
-    <partial name="./AdminPage/_FooterPartial" />
+            <!-- End of Page Wrapper -->
+            <partial name="./AdminPage/_FooterPartial" />
 </body>
 </html>

@@ -34,12 +34,20 @@ namespace TimeManagement
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<AppUser, AppRole>()
+                .AddDefaultTokenProviders()
+                .AddDefaultUI()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddAuthorization();
+
 
             //services.AddIdentity<AppUser, AppRole>()
             //.AddDefaultTokenProviders()
             //.AddDefaultUI();
+
+
+            services.AddHealthChecks();
+
 
             services.Configure<RouteOptions>(options => {
                 options.AppendTrailingSlash = false;        // Thêm dấu / vào cuối URL

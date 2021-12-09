@@ -1,0 +1,62 @@
+﻿@model TimeManagement.Entity.AppRole
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@{
+    ViewData["Title"] = "Role Detail Page";
+    Layout = "./_LayoutAdmin";
+}
+
+
+<!-- Main Content -->
+<div id="content">
+
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+
+
+        <p class="mb-4">
+            <h5> <a href="admin/register"> Create Acount</a></h5>
+        </p>
+
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Users List</h6>
+            </div>
+            <div class="card-body">
+                <table>
+                    <tr>
+                        <th>
+                            Role Name:
+                        </th>
+                        <td>
+                            @Model.Name;
+                        </td>
+                    </tr>
+                    
+                </table>
+
+                <div>
+                    <a asp-action="Index"> Back To List </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->

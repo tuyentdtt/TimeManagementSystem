@@ -365,9 +365,23 @@ namespace TimeManagement.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Description", "Discriminator", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "16d716c2-956e-4e77-bedb-529d50df8274", "6cf6f116-1081-4cf5-804f-a9d432c9b362", null, "AppRole", "Admin", "ADMIN" },
+                    { "05c077a4-c369-4fd1-a73d-7e6ff7e199f8", "f673233d-d76d-4a19-8e70-106d58141154", null, "AppRole", "Staff", "STAFF" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "DoB", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "MaPhong", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fb7479ce-35a0-4a30-be73-92128d7f815c", 0, "036eed1b-09dc-4538-9cc0-04a518ee7513", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Tuyen", null, false, null, null, null, null, null, null, false, "42d283df-f3a3-4b70-abf6-daaccadb6e68", false, null });
+                values: new object[,]
+                {
+                    { "25e0ced4-6d5a-48ec-8b04-a5b5dd4fa7c4", 0, "b7ef2880-3e01-4601-835f-b2ec1f9f29f3", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Tuyen1@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAEOLtWA3sTIYv0Mdo3HW7ihzZWXgtbAxQBE35q6k0jSZq061rY4Fz5JoXZB1wxzj6DQ==", null, false, "9c8bdefa-742c-404a-bd18-038876e7158d", false, null },
+                    { "f1e9842f-353b-4f70-abe3-2a02e797dfca", 0, "42c7bbd2-0f1b-4a4e-a89f-7944038212bf", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAEJWr+LsV9ofLgpnr4OjUCCOpwKCC7O9uR22HBUJrCbvhL2fCsOc4St+XX+KYnZ3rKA==", null, false, "c39ffc88-6f87-428d-8b21-925495a30db9", false, null },
+                    { "39f70206-e671-4802-a2a6-dd9445a03017", 0, "b4e74e16-7015-4927-b933-9cdc7606ded6", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "staf@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAEJpGyraVmDDwfG/D8yiGyzvlC/1i2b5yF3uEWCHHAksFiczE2XsbXPOy5CIA1fHmtQ==", null, false, "46004ac6-40f6-4662-902e-525fd23269db", false, null }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comment_MaCongViec",
