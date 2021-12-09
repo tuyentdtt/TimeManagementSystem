@@ -67,6 +67,7 @@ namespace TimeManagement.Data
             builder.ApplyConfiguration(new LichSuConfigurations());
             builder.ApplyConfiguration(new PhongBanConfigurations());
             builder.ApplyConfiguration(new TrangThaiConfigurations());
+            builder.ApplyConfiguration(new LichConfigurations());
 
 
 
@@ -86,6 +87,7 @@ namespace TimeManagement.Data
         public DbSet<LichSu> LichSu { set; get; }
         public DbSet<PhongBan> PhongBan { set; get; }
         public DbSet<TrangThai> TrangThai { set; get; }
+        public DbSet<Lich> Lich { set; get; }
 
 
     }

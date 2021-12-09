@@ -10,7 +10,7 @@ using TimeManagement.Data;
 namespace TimeManagement.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211209090532_init")]
+    [Migration("20211209211741_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -176,12 +176,10 @@ namespace TimeManagement.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -218,12 +216,10 @@ namespace TimeManagement.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -457,6 +453,45 @@ namespace TimeManagement.Migrations
                     b.ToTable("FileDinhKem");
                 });
 
+            modelBuilder.Entity("TimeManagement.Entity.Lich", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Slot1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slot2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slot3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slot4")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slot5")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slot6")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slot7")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slot8")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Lich");
+                });
+
             modelBuilder.Entity("TimeManagement.Entity.LichSu", b =>
                 {
                     b.Property<string>("Id")
@@ -546,15 +581,15 @@ namespace TimeManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "16d716c2-956e-4e77-bedb-529d50df8274",
-                            ConcurrencyStamp = "6cf6f116-1081-4cf5-804f-a9d432c9b362",
+                            Id = "660f87c0-b0b9-4a51-913a-59829345264d",
+                            ConcurrencyStamp = "7c229d0e-6d34-4712-8ff2-c057146692ac",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "05c077a4-c369-4fd1-a73d-7e6ff7e199f8",
-                            ConcurrencyStamp = "f673233d-d76d-4a19-8e70-106d58141154",
+                            Id = "796a4128-d5b7-4af3-afd2-b32fa5ec35c4",
+                            ConcurrencyStamp = "87cf09b1-9516-4482-91cc-bd266731f160",
                             Name = "Staff",
                             NormalizedName = "STAFF"
                         });
@@ -583,43 +618,43 @@ namespace TimeManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "25e0ced4-6d5a-48ec-8b04-a5b5dd4fa7c4",
+                            Id = "3a8d7e13-d0e2-4afb-93c3-8d0f1226ec95",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b7ef2880-3e01-4601-835f-b2ec1f9f29f3",
+                            ConcurrencyStamp = "68c3b919-9eae-4aa2-92a4-d669b1ec90d7",
                             Email = "Tuyen1@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOLtWA3sTIYv0Mdo3HW7ihzZWXgtbAxQBE35q6k0jSZq061rY4Fz5JoXZB1wxzj6DQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJEQTxT7RE28js4I61zdOmq3Hq17dQGIboYk8AnPgcXlwLyVXbIRFIzjegVP4T39Zw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9c8bdefa-742c-404a-bd18-038876e7158d",
+                            SecurityStamp = "1f3d29af-4931-412e-824f-7432dab70a54",
                             TwoFactorEnabled = false,
                             DoB = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "f1e9842f-353b-4f70-abe3-2a02e797dfca",
+                            Id = "2328a998-48f2-4214-8d7f-52666511df28",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "42c7bbd2-0f1b-4a4e-a89f-7944038212bf",
+                            ConcurrencyStamp = "df0783a6-e2da-4e98-b5f5-29b7270a4c11",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEJWr+LsV9ofLgpnr4OjUCCOpwKCC7O9uR22HBUJrCbvhL2fCsOc4St+XX+KYnZ3rKA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEB304UFk6IkMICRFySQAxeyM03M/xf/rgiQBeVyWWN/+6jY42fgM1TUBXXh8aRSPMw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c39ffc88-6f87-428d-8b21-925495a30db9",
+                            SecurityStamp = "09941fc7-aaa3-428c-88ac-d6466ab1a017",
                             TwoFactorEnabled = false,
                             DoB = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = "39f70206-e671-4802-a2a6-dd9445a03017",
+                            Id = "ee9766e6-bd5b-46a5-a2b6-f95e880bd07c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b4e74e16-7015-4927-b933-9cdc7606ded6",
+                            ConcurrencyStamp = "fd5926de-2fff-4ee4-a95b-e23083014856",
                             Email = "staf@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEJpGyraVmDDwfG/D8yiGyzvlC/1i2b5yF3uEWCHHAksFiczE2XsbXPOy5CIA1fHmtQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECIace156Gjrb4PY6J7b/nV7lJqRIPxiFStT3CNWXSJzWq2oiCfjsZZAAppMNe+rzQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "46004ac6-40f6-4662-902e-525fd23269db",
+                            SecurityStamp = "2dc7417e-5cc7-45df-b9cb-eaff096213aa",
                             TwoFactorEnabled = false,
                             DoB = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
@@ -724,6 +759,15 @@ namespace TimeManagement.Migrations
                     b.Navigation("MaCongViec_Fk");
                 });
 
+            modelBuilder.Entity("TimeManagement.Entity.Lich", b =>
+                {
+                    b.HasOne("TimeManagement.Entity.AppUser", "AppUser_Fk")
+                        .WithMany("Lich")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("AppUser_Fk");
+                });
+
             modelBuilder.Entity("TimeManagement.Entity.LichSu", b =>
                 {
                     b.HasOne("TimeManagement.Entity.CongViec", "MaCongViec_Fk")
@@ -768,6 +812,11 @@ namespace TimeManagement.Migrations
             modelBuilder.Entity("TimeManagement.Entity.TrangThai", b =>
                 {
                     b.Navigation("CongViec");
+                });
+
+            modelBuilder.Entity("TimeManagement.Entity.AppUser", b =>
+                {
+                    b.Navigation("Lich");
                 });
 #pragma warning restore 612, 618
         }

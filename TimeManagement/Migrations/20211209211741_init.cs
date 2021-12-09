@@ -175,6 +175,32 @@ namespace TimeManagement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Lich",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Slot1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slot2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slot3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slot4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slot5 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slot6 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slot7 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Slot8 = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lich", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Lich_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserClaims",
                 columns: table => new
                 {
@@ -199,8 +225,8 @@ namespace TimeManagement.Migrations
                 name: "UserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -244,8 +270,8 @@ namespace TimeManagement.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -369,8 +395,8 @@ namespace TimeManagement.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Discriminator", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "16d716c2-956e-4e77-bedb-529d50df8274", "6cf6f116-1081-4cf5-804f-a9d432c9b362", null, "AppRole", "Admin", "ADMIN" },
-                    { "05c077a4-c369-4fd1-a73d-7e6ff7e199f8", "f673233d-d76d-4a19-8e70-106d58141154", null, "AppRole", "Staff", "STAFF" }
+                    { "660f87c0-b0b9-4a51-913a-59829345264d", "7c229d0e-6d34-4712-8ff2-c057146692ac", null, "AppRole", "Admin", "ADMIN" },
+                    { "796a4128-d5b7-4af3-afd2-b32fa5ec35c4", "87cf09b1-9516-4482-91cc-bd266731f160", null, "AppRole", "Staff", "STAFF" }
                 });
 
             migrationBuilder.InsertData(
@@ -378,9 +404,9 @@ namespace TimeManagement.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "DoB", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "MaPhong", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "25e0ced4-6d5a-48ec-8b04-a5b5dd4fa7c4", 0, "b7ef2880-3e01-4601-835f-b2ec1f9f29f3", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Tuyen1@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAEOLtWA3sTIYv0Mdo3HW7ihzZWXgtbAxQBE35q6k0jSZq061rY4Fz5JoXZB1wxzj6DQ==", null, false, "9c8bdefa-742c-404a-bd18-038876e7158d", false, null },
-                    { "f1e9842f-353b-4f70-abe3-2a02e797dfca", 0, "42c7bbd2-0f1b-4a4e-a89f-7944038212bf", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAEJWr+LsV9ofLgpnr4OjUCCOpwKCC7O9uR22HBUJrCbvhL2fCsOc4St+XX+KYnZ3rKA==", null, false, "c39ffc88-6f87-428d-8b21-925495a30db9", false, null },
-                    { "39f70206-e671-4802-a2a6-dd9445a03017", 0, "b4e74e16-7015-4927-b933-9cdc7606ded6", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "staf@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAEJpGyraVmDDwfG/D8yiGyzvlC/1i2b5yF3uEWCHHAksFiczE2XsbXPOy5CIA1fHmtQ==", null, false, "46004ac6-40f6-4662-902e-525fd23269db", false, null }
+                    { "3a8d7e13-d0e2-4afb-93c3-8d0f1226ec95", 0, "68c3b919-9eae-4aa2-92a4-d669b1ec90d7", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Tuyen1@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAEJEQTxT7RE28js4I61zdOmq3Hq17dQGIboYk8AnPgcXlwLyVXbIRFIzjegVP4T39Zw==", null, false, "1f3d29af-4931-412e-824f-7432dab70a54", false, null },
+                    { "2328a998-48f2-4214-8d7f-52666511df28", 0, "df0783a6-e2da-4e98-b5f5-29b7270a4c11", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAEB304UFk6IkMICRFySQAxeyM03M/xf/rgiQBeVyWWN/+6jY42fgM1TUBXXh8aRSPMw==", null, false, "09941fc7-aaa3-428c-88ac-d6466ab1a017", false, null },
+                    { "ee9766e6-bd5b-46a5-a2b6-f95e880bd07c", 0, "fd5926de-2fff-4ee4-a95b-e23083014856", "AppUser", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "staf@gmail.com", true, null, null, false, null, null, null, null, "AQAAAAEAACcQAAAAECIace156Gjrb4PY6J7b/nV7lJqRIPxiFStT3CNWXSJzWq2oiCfjsZZAAppMNe+rzQ==", null, false, "2dc7417e-5cc7-45df-b9cb-eaff096213aa", false, null }
                 });
 
             migrationBuilder.CreateIndex(
@@ -412,6 +438,11 @@ namespace TimeManagement.Migrations
                 name: "IX_FileDinhKem_MaCongViec",
                 table: "FileDinhKem",
                 column: "MaCongViec");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Lich_UserId",
+                table: "Lich",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_LichSu_MaCongViec",
@@ -473,6 +504,9 @@ namespace TimeManagement.Migrations
 
             migrationBuilder.DropTable(
                 name: "FileDinhKem");
+
+            migrationBuilder.DropTable(
+                name: "Lich");
 
             migrationBuilder.DropTable(
                 name: "LichSu");

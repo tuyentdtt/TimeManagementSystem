@@ -68,11 +68,8 @@ namespace TimeManagement.Areas.Admin.Controllers
                     userQuery.FirstName = appUser.FirstName;
                     userQuery.LastName = appUser.LastName;
                     
-                   var aa =  await _userManager.UpdateAsync(userQuery);
-                    if (!aa.Succeeded)
-                    {
-                        Console.WriteLine(aa.Errors);
-                    }
+                   await _userManager.UpdateAsync(userQuery);
+
                 }
                 
                 return RedirectToAction(nameof(Index));

@@ -37,5 +37,7 @@ namespace TimeManagement.Entity
 
         public List<FileDinhKem> FileDinhKem { get; set; }
 
+        public List<Lich> Lich { get; set; }
+
     }
 }

@@ -50,7 +50,17 @@ namespace TimeManagement.Data
                    Id = Guid.NewGuid().ToString(),
                    Name = "Staff",
                    NormalizedName = "STAFF"
+               },
+               new AppRole()
+               {
+                   Id = Guid.NewGuid().ToString(),
+                   Name = "Management",
+                   NormalizedName = "MANAGEMENT"
                });
+
+
+
+
 
         }    
                 

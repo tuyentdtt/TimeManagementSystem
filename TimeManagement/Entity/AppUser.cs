@@ -17,6 +17,8 @@ namespace TimeManagement.Entity
 
 
 
+        public List<Lich> Lich { get; set; }
+
 
 
 
